@@ -4,13 +4,10 @@ import Pages.AddCustomersPage;
 import Pages.MangerOptionsPage;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.BeforeTest;
-
-import java.util.ArrayList;
 import java.util.List;
 
 public class AccountPage extends CustomersPage{
     List<String[]> Data= Reusable.read();
-    List<String> ID=new ArrayList<>();
     private WebElement FName=null;
     private WebElement LName=null;
     private WebElement ZipCode=null;

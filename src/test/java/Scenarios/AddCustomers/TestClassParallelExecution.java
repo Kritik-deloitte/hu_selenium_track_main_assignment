@@ -53,6 +53,7 @@ public class TestClassParallelExecution {
         WebElement element;
         driver=init(driver);
         driver=fillData(driver,Data.get(0));
+        driver.switchTo().alert().accept();
         Reusable.Sleep(10000);
     }
     @Test
@@ -60,8 +61,8 @@ public class TestClassParallelExecution {
         WebDriver driver=null;
         WebElement element;
         driver=init(driver);
-        Reusable.Sleep(2000);
         driver=fillData(driver,Data.get(1));
+        driver.switchTo().alert().accept();
         Reusable.Sleep(10000);
     }
     @Test
@@ -69,8 +70,8 @@ public class TestClassParallelExecution {
         WebDriver driver=null;
         WebElement element;
         driver=init(driver);
-        Reusable.Sleep(3000);
         driver=fillData(driver,Data.get(2));
+        driver.switchTo().alert().accept();
         Reusable.Sleep(10000);
     }
     @Test
@@ -78,8 +79,8 @@ public class TestClassParallelExecution {
         WebDriver driver=null;
         WebElement element;
         driver=init(driver);
-        Reusable.Sleep(4000);
         driver=fillData(driver,Data.get(3));
+        driver.switchTo().alert().accept();
         Reusable.Sleep(10000);
     }
 

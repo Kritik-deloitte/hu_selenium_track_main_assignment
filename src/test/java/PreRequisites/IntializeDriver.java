@@ -9,8 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
-
-import java.util.concurrent.TimeUnit;
+import java.time.Duration;
 
 public class IntializeDriver {
 
@@ -24,7 +23,7 @@ public class IntializeDriver {
         //Maximizing the window
         driver.manage().window().maximize();
         //implicit wait of 5 secs
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         driver.get("https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login");
         return driver;
     }
