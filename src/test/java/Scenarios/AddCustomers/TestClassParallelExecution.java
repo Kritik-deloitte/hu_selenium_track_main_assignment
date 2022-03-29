@@ -1,3 +1,7 @@
+/*
+KritikBansal
+29-March-2022
+ */
 package Scenarios.AddCustomers;
 
 import Pages.AddCustomersPage;
@@ -11,10 +15,12 @@ import org.testng.annotations.Test;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+//parallel execution of adding the more than one customers at the same time
 public class TestClassParallelExecution {
-
+    //reading data from the excel
     List<String[]> Data=Reusable.read();
 
+    //initialing the elements
     public WebDriver init(WebDriver driver){
         System.out.println("<-------------------------------------------------------->");
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\kribansal\\Downloads\\chromedriver_win32\\chromedriver.exe");
@@ -27,13 +33,16 @@ public class TestClassParallelExecution {
         driver.get("https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login");
         Reusable.Sleep(2000);
         WebElement element;
+        //press manager login button
         element= OpenPage.ManagerLoginButton(driver);
         element.click();
         Reusable.Sleep(1000);
+        //press the add customers button
         element= MangerOptionsPage.AddCustomerButton(driver);
         element.click();
         return driver;
     }
+    //fill the data with the customers in the inputs getting form the Excel
     public WebDriver fillData(WebDriver driver,String[] Data){
         WebElement element;
         element= AddCustomersPage.FirstNameInput(driver);
@@ -46,40 +55,55 @@ public class TestClassParallelExecution {
         element.click();
         return driver;
     }
-
+    //adding the customer with the new data
     @Test
     public void NewData(){
         WebDriver driver=null;
         WebElement element;
+        //initialing or doing prerequisites of the driver
         driver=init(driver);
+        //filling the data into the input fields
         driver=fillData(driver,Data.get(0));
+        //accepting the alert pop ups
         driver.switchTo().alert().accept();
         Reusable.Sleep(10000);
     }
+    //adding the customer with new data again
     @Test
     public void NewData1(){
         WebDriver driver=null;
         WebElement element;
+        //initialing or doing prerequisites of the driver
         driver=init(driver);
+        //filling the data into the input fields
         driver=fillData(driver,Data.get(1));
+        //accepting the alert pop ups
         driver.switchTo().alert().accept();
         Reusable.Sleep(10000);
     }
+    //adding the customer with the same data
     @Test
     public void SameData(){
         WebDriver driver=null;
         WebElement element;
+        //initialing or doing prerequisites of the driver
         driver=init(driver);
+        //filling the data into the input fields
         driver=fillData(driver,Data.get(2));
+        //accepting the alert pop ups
         driver.switchTo().alert().accept();
         Reusable.Sleep(10000);
     }
+    // adding the customer with only changing the case of data
     @Test
     public void ChangeCaseData(){
         WebDriver driver=null;
         WebElement element;
+        //initialing or doing prerequisites of the driver
         driver=init(driver);
+        //filling the data into the input fields
         driver=fillData(driver,Data.get(3));
+        //accepting the alert pop ups
         driver.switchTo().alert().accept();
         Reusable.Sleep(10000);
     }

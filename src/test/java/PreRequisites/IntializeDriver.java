@@ -1,7 +1,6 @@
-/**
+/*
 KritikBansal
 24-March-2022
-
  */
 package PreRequisites;
 
@@ -11,6 +10,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import java.time.Duration;
 
+//prerequisites that have been done before reaching the open webpage scenario scenario
 public class IntializeDriver {
 
     public static WebDriver driver;

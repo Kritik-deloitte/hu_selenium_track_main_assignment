@@ -1,3 +1,7 @@
+/*
+KritikBansal
+29-March-2022
+ */
 package PreRequisites;
 
 import org.apache.commons.io.FileUtils;
@@ -10,6 +14,7 @@ import org.testng.ITestResult;
 import java.io.File;
 import java.io.IOException;
 
+// listeners class implements itestlisteners which do the specific task on the particular state of the test
 public class Listeners extends IntializeDriver implements ITestListener {
     @Override
     public void onTestStart(ITestResult result) {
@@ -23,11 +28,16 @@ public class Listeners extends IntializeDriver implements ITestListener {
 
     @Override
     public void onTestFailure(ITestResult result) {
+        //getting the test name which is failed
         String testName=result.getMethod().getMethodName();
+        //initializing the screenshot class
         TakesScreenshot ts=(TakesScreenshot) driver;
+        //initializing the source of screenshot
         File src=ts.getScreenshotAs(OutputType.FILE);
+        //initializing the destination of screenshot
         File des=new File(System.getProperty("user.dir")+"/Failed Tests Screenshots/"+testName+"_.jpg");
         try {
+            //copy the screenshot in the destination
             FileUtils.copyFile(src,des);
         } catch (IOException e) {
             e.printStackTrace();

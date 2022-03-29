@@ -1,3 +1,7 @@
+/*
+KritikBansal
+29-March-2022
+ */
 package PreRequisites;
 
 import org.apache.poi.ss.usermodel.Cell;
@@ -11,7 +15,10 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+//contains reusable methods for the tests
 public class Reusable {
+
+    //introduce wait for particular duration for rest of the code to execute
     public static void Sleep(int t){
         try {
             Thread.sleep(t);
@@ -19,6 +26,7 @@ public class Reusable {
             e.printStackTrace();
         }
     }
+    // reading the customers data from excel
     public static List<String[]> read(){
         //initialize the result array
         List<String[]> result = new ArrayList<>();
@@ -66,6 +74,7 @@ public class Reusable {
         }
         return result;
     }
+    //reading the transactions data from excel
     public static List<String[]> readTransactions(){
         //initialize the result array
         List<String[]> result = new ArrayList<>();
